@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<h1>Student Management System</h1>
+
+<a href="/add">Add Student</a>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Course</th>
+        <th>Actions</th>
+    </tr>
+
+    <% students.forEach(student => { %>
+        <tr>
+            <td><%= student.name %></td>
+            <td><%= student.course %></td>
+            <td>
+                <a href="/edit/<%= student.id %>">Edit</a>
+                <a href="/delete/<%= student.id %>">Delete</a>
+            </td>
+        </tr>
+    <% }) %>
+
+</table>
+
+</body>
+</html>
